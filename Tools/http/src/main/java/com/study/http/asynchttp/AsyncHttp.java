@@ -50,7 +50,11 @@ public class AsyncHttp {
 //	        
 //	        System.out.println("Done");
 //	}
-	
+	/**
+	 * 异步httppost
+	 * @param url url地址
+	 * @param params post的map数据
+	 */
 	public static void asyncHttpPost(String url,Map<String, String> params) {
 		 RequestConfig globalConfig = RequestConfig.custom().setCookieSpec(CookieSpecs.STANDARD)  
 	                .setConnectionRequestTimeout(10000).setConnectTimeout(10000).setSocketTimeout(50000). build();  
@@ -71,7 +75,8 @@ public class AsyncHttp {
 
 						public void completed(HttpResponse response) {
             				//这里使用EntityUtils.toString()方式时会大概率报错，原因：未接受完毕，链接已关  
-          				  	String  body = getBody(response);  
+          				  	String  body = getBody(response); 
+          				  	System.out.println(body);
           				  	closeResource(httpclient);
 						}
 

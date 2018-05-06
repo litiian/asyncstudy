@@ -15,6 +15,8 @@ public class NettyClientHandler extends ChannelInboundHandlerAdapter  {
 	@Override
 	public void channelActive(ChannelHandlerContext ctx) throws Exception {
 		System.out.println("开始写数据");
+		
+		//发送ByteBuf数据
 		String data="232301FE4C4B4A54424B425930474630303932373502001E120504120E06000530303030304130303030303536313531453833450100A1";
 		ByteBuf heapBuffer = Unpooled.buffer(data.length());    
 		heapBuffer.writeBytes(data.getBytes()); 

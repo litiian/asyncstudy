@@ -14,7 +14,7 @@ class NettyClient {
 	
     public static void main(String[] args) throws InterruptedException, IOException {
     	String host="localhost";//服务端ip
-    	int port =7777;//服务端端口    	
+    	int port =8080;//服务端端口    	
     	EventLoopGroup workerGroup=new NioEventLoopGroup();
     	
     	try{
@@ -26,6 +26,7 @@ class NettyClient {
 
 				@Override
 				protected void initChannel(SocketChannel ch) throws Exception {
+					//没有解码器的情况线下默认接受和发送ByteBuf
 					ch.pipeline().addLast(new NettyClientHandler());
 				}});
     		

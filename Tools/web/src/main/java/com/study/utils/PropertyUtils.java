@@ -1,5 +1,7 @@
 package com.study.utils;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -22,5 +24,15 @@ public class PropertyUtils {
 		}
 		return properties;
 	}
+public static Properties readPropertys(String filename) {
+		
+		Properties properties=new Properties();
+		File file = new File(filename);
+		try(InputStream inStream = new FileInputStream(file); ) {			
+			properties.load(inStream);			
+		} catch (IOException e) {
 
+		}
+		return properties;
+	}
 }

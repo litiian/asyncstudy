@@ -4,12 +4,20 @@ import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
+import io.netty.util.ReferenceCountUtil;
 
 public class NettyClientHandler extends ChannelInboundHandlerAdapter  {
 	
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg) {
 		System.out.println("开始读数据");
+		
+		/**
+		 * ChannelInboundHandlerAdapter的channelRead不会主动释放消息，除非调用了ctx.channel().writeAndFlush(msg)
+		 * 
+		 * SimpleChannelInboundHandler<Object> 的channelRead0在放回的时候会主动释放消息
+		 */
+		ReferenceCountUtil.release(msg);
 	}
 	
 	@Override

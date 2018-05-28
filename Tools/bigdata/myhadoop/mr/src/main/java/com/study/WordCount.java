@@ -15,12 +15,14 @@ import java.io.IOException;
 import java.util.StringTokenizer;
 
 public class WordCount {
+
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         Configuration conf=new Configuration();
 
         Job job=Job.getInstance(conf,"word count");
         job.setJarByClass(WordCount.class);
         job.setMapperClass(TokenizerMapper.class);
+        //在每台机器上先执行合并操作
         job.setCombinerClass(IntSumReducer.class);
         job.setReducerClass(IntSumReducer.class);
         job.setOutputKeyClass(Text.class);
@@ -30,6 +32,7 @@ public class WordCount {
         FileOutputFormat.setOutputPath(job,new Path(args[1]));
         System.exit(job.waitForCompletion(true)?0:1);
     }
+
 
     //mapper class
     public static class TokenizerMapper extends Mapper<Object,Text,Text,IntWritable> {

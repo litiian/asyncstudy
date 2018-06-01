@@ -19,6 +19,9 @@ import java.io.IOException;
 import java.net.URI;
 import java.util.*;
 
+/**
+ * 该类需要打成jar包在hadoop集群上跑
+ */
 public class WordCount {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
@@ -52,6 +55,7 @@ public class WordCount {
         FileInputFormat.addInputPath(job,new Path(otherArgs.get(0)));
         FileOutputFormat.setOutputPath(job,new Path(otherArgs.get(1)));
 
+        //waitForCompletion 将job提交给集群，并且监控job的进度
         System.exit(job.waitForCompletion(true)?0:1);
     }
 

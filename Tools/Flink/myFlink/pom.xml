@@ -26,7 +26,7 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-    <!--add Flink-->
+   <!--ADD Flink jars-->
     <dependency>
       <groupId>org.apache.flink</groupId>
       <artifactId>flink-java</artifactId>
@@ -42,7 +42,9 @@
       <artifactId>flink-clients_2.11</artifactId>
       <version>1.6.0</version>
     </dependency>
-    <!--and Flink end-->
+
+    <!--Add Fink jars end-->
+
   </dependencies>
 
   <build>

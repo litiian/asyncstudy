@@ -7,9 +7,8 @@
   <groupId>com.flink</groupId>
   <artifactId>myFlink</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>war</packaging>
 
-  <name>myFlink Maven Webapp</name>
+  <name>myFlink</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -26,7 +25,7 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-   <!--ADD Flink jars-->
+
     <dependency>
       <groupId>org.apache.flink</groupId>
       <artifactId>flink-java</artifactId>
@@ -42,20 +41,16 @@
       <artifactId>flink-clients_2.11</artifactId>
       <version>1.6.0</version>
     </dependency>
-
-    <!--Add Fink jars end-->
-
   </dependencies>
 
   <build>
-    <finalName>myFlink</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
-        <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
+        <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.0.2</version>
@@ -69,8 +64,8 @@
           <version>2.20.1</version>
         </plugin>
         <plugin>
-          <artifactId>maven-war-plugin</artifactId>
-          <version>3.2.0</version>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.0.2</version>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>

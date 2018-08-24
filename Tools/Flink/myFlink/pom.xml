@@ -26,6 +26,7 @@
       <scope>test</scope>
     </dependency>
 
+    <!--and Flink-->
     <dependency>
       <groupId>org.apache.flink</groupId>
       <artifactId>flink-java</artifactId>
@@ -41,6 +42,12 @@
       <artifactId>flink-clients_2.11</artifactId>
       <version>1.6.0</version>
     </dependency>
+    <dependency>
+      <groupId>org.apache.flink</groupId>
+      <artifactId>flink-connector-kafka-0.11_2.11</artifactId>
+      <version>1.5.0</version>
+    </dependency>
+    <!--and Flink end-->
   </dependencies>
 
   <build>
@@ -77,5 +84,21 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.0.2</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <classpathPrefix>lib/</classpathPrefix>
+              <mainClass>com.flink.SocketWindowWordCount</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>

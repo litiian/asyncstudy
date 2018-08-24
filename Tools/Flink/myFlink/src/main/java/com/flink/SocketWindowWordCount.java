@@ -38,7 +38,7 @@ public class SocketWindowWordCount {
             }
         }).keyBy("word")
                 //每5秒从socket中读取一次数据
-                .timeWindow(Time.seconds(5),Time.seconds(1))
+                .timeWindow(Time.seconds(5L),Time.seconds(1L))
                 .reduce(new ReduceFunction<WordWithCount>() {
                     @Override
                     public WordWithCount reduce(WordWithCount a, WordWithCount b) throws Exception {

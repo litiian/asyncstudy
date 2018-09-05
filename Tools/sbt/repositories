@@ -1,0 +1,14 @@
+[repositories]
+local
+aliyun-nexus: http://maven.aliyun.com/nexus/content/groups/public/
+maven-central: http://repo.maven.apache.org/maven2/
+sbt-releases-repo: http://repo.typesafe.com/typesafe/ivy-releases/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]
+sbt-plugins-repo: http://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]
+ibiblio-maven: http://maven.ibiblio.org/maven2/
+store_2: http://repo2.maven.org/maven2/
+typesafe-ivy: https://dl.bintray.com/typesafe/ivy-releases/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]
+uk-repository: http://uk.maven.org/maven2/
+jboss-repository: http://repository.jboss.org/nexus/content/groups/public/
+comp-maven:http://mvnrepository.com/artifact/
+store_1:http://repo.typesafe.com/typesafe/ivy-releases/
+

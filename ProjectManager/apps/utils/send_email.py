@@ -1,13 +1,13 @@
 ######################################
 # Django 模块
 ######################################
-from import UserEmailVirificationCode
+# from .models import UserEmailVirificationCode
 from django.core.mail import send_mail, EmailMultiAlternatives
 
 ######################################
 # 自己写的模块
 ######################################
-from opms.settings import SERVER_URL, EMAIL_HOST_USER
+from ProjectManager.settings import SERVER_URL, EMAIL_HOST_USER
 
 ######################################
 # 系统模块
@@ -20,6 +20,9 @@ import time
 ######################################
 # 生成随机字符串
 ######################################
+from usr.models import UserEmailVirificationCode
+
+
 def make_random_code(code_length=4):
     chars = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM0123456789'
     random_code = ''

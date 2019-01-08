@@ -58,11 +58,11 @@ INSTALLED_APPS = [
     # 消息
     'message',
     # 文档
-   'document_management',
+    'document_management',
     # 操作记录
-   'operation_record',
+    'operation_record',
     # 线上管理
-   'online_management',
+    'online_management',
 ]
 
 
@@ -143,7 +143,7 @@ AUTH_USER_MODEL = 'usr.UserProfile'
 
 # 邮箱登陆
 AUTHENTICATION_BACKENDS = (
-    'users.views.OtherLoginBackend',
+    'usr.views.OtherLoginBackend',
 )
 
 

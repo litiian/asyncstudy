@@ -2,14 +2,12 @@
 Host management app
 """
 from django.urls import path
+from host_management.views import *
 
-from . import views
-from .views import *
 
 app_name = 'host_management'
 
 urlpatterns = [
-    path('index/', views.index),
     # 主机列表
     path('list', HostListView.as_view(), name='host_list'),
 

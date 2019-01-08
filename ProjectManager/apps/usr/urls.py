@@ -5,12 +5,18 @@ from django.urls import path
 from .views import *
 
 
-app_name = 'users'
+app_name = 'usr'
+
+
+
+
 
 urlpatterns = [
     # 首页
     path('', IndexView.as_view(), name='index'),
 
+    #注册
+    path('register/', RegisterView.as_view(), name='register'),
     # 登录
     path('login/', LoginView.as_view(), name='login'),
 

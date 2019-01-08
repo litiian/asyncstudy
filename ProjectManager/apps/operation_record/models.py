@@ -1,5 +1,5 @@
 from django.db import models
-from users.models import UserProfile
+from usr.models import UserProfile
 
 
 ######################################

@@ -33,7 +33,7 @@ from .models import *
 from operation_record.models import UserOperationRecord
 from utils.send_email import send_email_verificode
 from utils.user_func import get_ip_location
-from opms.settings import GAODE_API_KEY, CITY_ID, DEVELPER_EMAIL_ADDRESS, EMAIL_HOST_USER
+from ProjectManager.settings import GAODE_API_KEY, CITY_ID, DEVELPER_EMAIL_ADDRESS, EMAIL_HOST_USER
 from online_management.models import TroubleRecord, DeployRecord
 
 
@@ -134,8 +134,16 @@ class IndexView(LoginStatusCheck, View):
         }
 
         return render(request, 'users/index.html', context=context)
-
-
+#####################################
+# 注册
+#####################################
+class RegisterView(View):
+    def get(self, request):
+        # user_login_form = UerLoginForm()
+        context = {
+            # 'user_login_form': user_login_form,
+        }
+        return render(request, 'users/login/register.html', context=context)
 ######################################
 # 登录
 ######################################
@@ -1105,4 +1113,6 @@ def page_error(request):
 
 def permission_denied(request):
     return render(request, 'error/403.html')
+
+
 

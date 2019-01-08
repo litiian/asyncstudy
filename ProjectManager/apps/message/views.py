@@ -24,7 +24,7 @@ import datetime, time
 from utils.login_check import LoginStatusCheck
 from .forms import *
 from .models import *
-from opms.settings import SERVER_URL
+from ProjectManager.settings import SERVER_URL
 
 
 ######################################

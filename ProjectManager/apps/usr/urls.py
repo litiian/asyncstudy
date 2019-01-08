@@ -5,7 +5,7 @@ from django.urls import path
 from .views import *
 
 
-app_name = 'usr'
+app_name = 'users'
 
 
 
